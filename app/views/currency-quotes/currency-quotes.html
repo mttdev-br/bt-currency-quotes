@@ -1,0 +1,18 @@
+<div class="row" >
+  <div class="large-6 columns">
+    <h1>Últimas cotações</h1>
+    <!-- Futuro Componente -->
+    <div ng-repeat="quote in listQuotes" ng-model="quote">
+      <span>{{ quote.currencyObj.name }}</span> &nbsp; = &nbsp; <span>{{ quote.total_value / quote.quantity}}</span>
+    </div>
+  </div>
+  <div class="large-6 columns">
+    <h1>Receba cotações por e-mail</h1>
+    <label for="Nome">Seu nome:</label>
+    <input type="text" name="Nome"/>
+    <label for="Email">E-mail:</label>
+    <input type="text" name="Email" placeholder="ex: jose@mail.com"/>
+    <button ng-click="ctrl.register()">Cadastrar</button>
+    <span class="message" ng-model="ctrl.msgNewsletter"></span>
+  </div>
+</div>
