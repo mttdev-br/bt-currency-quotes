@@ -1,0 +1,49 @@
+<div class="row" >
+  <div class="large-6 columns">
+    <h1>Últimas cotações</h1>
+    <!-- Futuro Componente -->
+    <div class="quote-card" ng-repeat="quote in listQuotes" ng-model="quote">
+      <div class="title">
+        <h2>{{ quote.currencyObj.name.split(' ')[0] }}</h2>
+        <div class="abbreviation">
+          <span >[{{quote.currencyObj.abbreviation}}]</span>
+          <img src="{{quote.currencyObj.full_flag_image}}" />
+        </div>
+      </div>
+
+
+      <div class="sec-row center">
+        <div class="min-qtd">
+          <span>qtd. mínima:</span><br />
+          <span class="qtd">{{ ctrl.formatInt(quote.quantity) }}</span>
+        </div>
+        <div class="separator"></div>
+        <div class="value">
+          <span class="value-number"><span class="value-cur">R$</span>{{ ctrl.formatCurrency(quote.total_value / quote.quantity) }}</span>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <div class="large-6 columns">
+
+    <h1>Receba por e-mail</h1>
+    <form name="form" novalidate ng-submit="ctrl.register()">
+      <label for="Nome">Seu nome:</label>
+      <input type="text" name="Nome" ng-model="ctrl.user.name" required/>
+      <label for="Email">E-mail:</label>
+      <input type="text" name="Email" ng-model="ctrl.user.email" placeholder="ex: jose@mail.com" required/>
+
+      <div class="form-line">
+        <button class="button" ng-click="ctrl.register()">Cadastrar</button>
+      </div>
+      <ul ng-if="form.$submitted" class="help-block" ng-messages="form.Email.$error">
+          <li ng-message="required">Campo obrigatório</li>
+      </ul>
+    </form>
+    
+
+  </div>
+
+</div>
