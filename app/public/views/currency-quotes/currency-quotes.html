@@ -32,11 +32,11 @@
     <form name="form" class="newsletter" novalidate ng-submit="ctrl.register()">
       <label for="Nome">Seu nome:</label>
       <input type="text" class="newsletter-input" name="Nome" ng-model="ctrl.user.name" required/>
-      <label for="Email">E-mail:</label>
-      <input type="text" class="newsletter-input" name="Email" ng-model="ctrl.user.email" placeholder="ex: jose@mail.com" required/>
+      <label for="email">E-mail:</label>
+      <input type="text" class="newsletter-input" name="email" ng-model="ctrl.user.email" placeholder="ex: jose@mail.com" required/>
 
       <div class="newsletter-row">
-        <button class="button newsletter-button" ng-click="ctrl.register()" ng-class="{ 'success': success != undefined }" ng-disabled="success != undefined">{{buttonText}}</button>
+        <button class="button newsletter-button" type="submit" ng-class="{ 'success': success != undefined }" ng-disabled="success != undefined">{{buttonText}}</button>
       </div>
       <ul ng-if="form.email.$dirty"  class="help-block" ng-messages="form.Email.$error">
           <li ng-message="required">Campo obrigatório</li>
