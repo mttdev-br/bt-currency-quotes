@@ -23,19 +23,21 @@
 }
 
 .loading {
-  margin-top: 100px;
-  margin-bottom: 200px;
+  margin-left: 30px;
+  top: -20px;
+  position: relative;
 }
 
 .quote {
   padding:  10px 15px;
   box-shadow: 2px 3px 4px #ccc;
   margin: 15px;
+  background-color: #F9F9F9;
 }
 
 .header.big {
   font-weight: 200;
-  font-size: 40px;
+  font-size: 35px;
   text-align: center;
 }
 
@@ -53,8 +55,8 @@
 
 .abbreviation .symbol {
   display: block;
-  font-size: 8px;
-  line-height: 8px;
+  font-size: 10px;
+  line-height: 10px;
 }
 
 .abbreviation .img {
@@ -130,8 +132,17 @@
     margin: 20px;
   }
   
+  .quote .glow{
+    
+  }
+  
   .abbreviation {
     font-size: 12px;
+  }
+  
+  .abbreviation .symbol{
+    font-size: 12px;
+    line-height: 12px;
   }
   
   .values .unitary {

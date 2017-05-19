@@ -9,19 +9,19 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	border: 2px solid rgb(204,204,204);
+	border: 1px solid rgb(204,204,204);
 	border-left-color: rgb(0,0,0);
-	border-radius: 2373px;
-		-o-border-radius: 2373px;
-		-ms-border-radius: 2373px;
-		-webkit-border-radius: 2373px;
-		-moz-border-radius: 2373px;
+	border-radius: 974px;
+		-o-border-radius: 974px;
+		-ms-border-radius: 974px;
+		-webkit-border-radius: 974px;
+		-moz-border-radius: 974px;
 }
 
 .cssload-whirlpool {
-	margin: -59px 0 0 -59px;
-	height: 119px;
-	width: 119px;
+	margin: -24px 0 0 -24px;
+	height: 49px;
+	width: 49px;
 	animation: cssload-rotate 1150ms linear infinite;
 		-o-animation: cssload-rotate 1150ms linear infinite;
 		-ms-animation: cssload-rotate 1150ms linear infinite;
@@ -31,9 +31,9 @@
 
 .cssload-whirlpool::before {
 	content: "";
-	margin: -55px 0 0 -55px;
-	height: 105px;
-	width: 105px;
+	margin: -22px 0 0 -22px;
+	height: 43px;
+	width: 43px;
 	animation: cssload-rotate 1150ms linear infinite;
 		-o-animation: cssload-rotate 1150ms linear infinite;
 		-ms-animation: cssload-rotate 1150ms linear infinite;
@@ -43,9 +43,9 @@
 
 .cssload-whirlpool::after {
 	content: "";
-	margin: -69px 0 0 -69px;
-	height: 133px;
-	width: 133px;
+	margin: -28px 0 0 -28px;
+	height: 55px;
+	width: 55px;
 	animation: cssload-rotate 2300ms linear infinite;
 		-o-animation: cssload-rotate 2300ms linear infinite;
 		-ms-animation: cssload-rotate 2300ms linear infinite;

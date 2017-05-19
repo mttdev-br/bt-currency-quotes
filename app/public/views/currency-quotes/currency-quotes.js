@@ -19,13 +19,16 @@ angular.module('myApp.currency-quotes', ['ngRoute', 'myApp.quote', 'myApp.newsle
   $scope.listQuotes = [ ];
   $scope.user = { nome : "", email : ""};
   $scope.buttonText = "Cadastrar";
+  $scope.refreshing = false;
   
   //quotes section
   this.refreshQuotes = function() {
-
+    $scope.refreshing = true;
+    $scope.$apply();
     quoteService.getQuotes().then(function(data) {
       $scope.listQuotes = data.result;
       console.log("Refreshing quotes");
+      $scope.refreshing = false;
       $scope.$apply();
     });
   };

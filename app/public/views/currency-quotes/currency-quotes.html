@@ -1,13 +1,16 @@
 <div class="row" >
   <div class="large-6 columns">
-    <h1 class="header big">Últimas cotações</h1>
-    <!-- Futuro Componente -->
-    <div class="loading" ng-show="!listQuotes.length">
-      <div class="cssload-container">
-      <div class="cssload-whirlpool"></div>
+    <div class="center-text">
+      <h1 class="header big inblock">Últimas cotações</h1> 
+      <div class="loading inblock" ng-if="refreshing">
+        <div class="cssload-container">
+        <div class="cssload-whirlpool"></div>
+      </div>
+      </div>  
     </div>
-    </div>
-    <div class="quote" ng-repeat="quote in listQuotes" ng-model="quote">
+    
+    
+    <div class="quote" ng-repeat="quote in listQuotes" ng-model="quote" >
       
       <div>
         <h2 class="header med inblock">{{ quote.currencyObj.name.split(' ')[0] }}</h2>
