@@ -13,7 +13,7 @@ angular.module('myApp.currency-quotes', ['ngRoute', 'myApp.quote', 'myApp.newsle
   ['$scope', 'quoteService', 'newsletterService',
   function($scope, quoteService, newsletterService) {
 
-  console.log("[DEBUG] currency-quotesCtrl");
+  //console.log("[DEBUG] currency-quotesCtrl");
 
   //ng-repeat list
   $scope.listQuotes = [ ];
