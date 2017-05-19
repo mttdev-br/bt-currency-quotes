@@ -29,6 +29,7 @@
   <div class="large-6 columns">
 
     <h1>Receba por e-mail</h1>
+
     <form name="form" novalidate ng-submit="ctrl.register()">
       <label for="Nome">Seu nome:</label>
       <input type="text" name="Nome" ng-model="ctrl.user.name" required/>
@@ -36,13 +37,13 @@
       <input type="text" name="Email" ng-model="ctrl.user.email" placeholder="ex: jose@mail.com" required/>
 
       <div class="form-line">
-        <button class="button" ng-click="ctrl.register()">Cadastrar</button>
+        <button class="button" ng-class="buttonState" ng-click="ctrl.register()" ng-disabled="buttonState == 'success'">{{buttonText}}</button>
       </div>
       <ul ng-if="form.$submitted" class="help-block" ng-messages="form.Email.$error">
           <li ng-message="required">Campo obrigatório</li>
       </ul>
     </form>
-    
+
 
   </div>
 

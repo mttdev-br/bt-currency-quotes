@@ -97,10 +97,11 @@ h2 {
 }
 
 input[type="text"] {
-  font-size: 60px;
+  font-size: 40px;
   height: auto;
   font-weight: 300;
   padding: 20px;
+  transition: background-color 2.5s linear;
 }
 
 button.button {
@@ -109,4 +110,8 @@ button.button {
 
 .form-line {
   text-align: center;
+}
+
+.button[disabled].success {
+  color: #FFF;
 }

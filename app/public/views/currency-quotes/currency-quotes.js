@@ -18,13 +18,13 @@ angular.module('myApp.currency-quotes', ['ngRoute', 'myApp.quote', 'myApp.newsle
   //ng-repeat list
   $scope.listQuotes = [ ];
 
+  $scope.buttonText = 'Cadastrar';
+
   $scope.user = { nome : "", email : ""};
 
   $scope.msgNewsletter = "";
 
   //10s refresh interval
-
-
   this.refreshQuotes = function() {
 
     quoteService.getQuotes().then(function() {
@@ -39,20 +39,18 @@ angular.module('myApp.currency-quotes', ['ngRoute', 'myApp.quote', 'myApp.newsle
 
   this.register = function () {
     var self = this;
-    
     if (!$scope.form.$valid)
       return;
-
     console.log("[DEBUG] register");
-
-    var promise = newsletterService.registerNewsletter($scope.user.nome, $scope.user.email).then(function(data){ 
+    var promise = newsletterService.registerNewsletter($scope.user.nome, $scope.user.email).then(function(data){
       //var res = newsletterService.getResponse();
-        
       console.log("Registro de newsletter efetuado com sucesso.");
       $scope.msgNewsletter = data.msg;
-      
+      $scope.buttonState = 'success';
+      $scope.buttonText = 'Sucesso';
+
     });
-    
+
   };
 
   this.formatCurrency = function(number) {
