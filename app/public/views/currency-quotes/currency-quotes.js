@@ -1,14 +1,14 @@
 'use strict';
 
 angular.module('myApp.currency-quotes', ['ngRoute', 'myApp.quote', 'myApp.newsletter'])
-
+//routes an config
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/currency-quotes', {
     templateUrl: 'views/currency-quotes/currency-quotes.html',
     controller: 'currency-quotesCtrl as ctrl'
   });
 }])
-
+//controller
 .controller('currency-quotesCtrl',
   ['$scope', 'quoteService', 'newsletterService',
   function($scope, quoteService, newsletterService) {
@@ -17,44 +17,44 @@ angular.module('myApp.currency-quotes', ['ngRoute', 'myApp.quote', 'myApp.newsle
 
   //ng-repeat list
   $scope.listQuotes = [ ];
-
   $scope.user = { nome : "", email : ""};
-
-  $scope.msgNewsletter = "";
-
-  //10s refresh interval
-
-
+  $scope.buttonText = "Cadastrar";
+  
+  //quotes section
   this.refreshQuotes = function() {
 
     quoteService.getQuotes().then(function() {
       $scope.listQuotes = quoteService.quotes();
-      console.log("refreshing..." + $scope.listQuotes.length);
+      console.log("Refreshing quotes");
       $scope.$apply();
     });
   };
 
+  //first search
   setTimeout(this.refreshQuotes, 100);
-  //this.refreshInterval = setInterval(this.refreshQuotes, 10 * 1000);
-
+    
+  //10s refresh interval
+  this.refreshInterval = setInterval(this.refreshQuotes, 10 * 1000);
+  
+   //newsletter section
   this.register = function () {
     var self = this;
     
     if (!$scope.form.$valid)
       return;
 
-    console.log("[DEBUG] register");
-
     var promise = newsletterService.registerNewsletter($scope.user.nome, $scope.user.email).then(function(data){ 
       //var res = newsletterService.getResponse();
         
       console.log("Registro de newsletter efetuado com sucesso.");
-      $scope.msgNewsletter = data.msg;
+      $scope.success = data.msg;
+      $scope.buttonText = "Sucesso";
       
     });
     
   };
-
+  
+  //should move these to UtilsService
   this.formatCurrency = function(number) {
     var num = this.formatNumber(number.toString());
     return parseFloat(num).toFixed(2).toString().replace(".", ",");
