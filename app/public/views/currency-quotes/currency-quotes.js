@@ -23,8 +23,8 @@ angular.module('myApp.currency-quotes', ['ngRoute', 'myApp.quote', 'myApp.newsle
   //quotes section
   this.refreshQuotes = function() {
 
-    quoteService.getQuotes().then(function() {
-      $scope.listQuotes = quoteService.quotes();
+    quoteService.getQuotes().then(function(data) {
+      $scope.listQuotes = data.result;
       console.log("Refreshing quotes");
       $scope.$apply();
     });
@@ -43,7 +43,7 @@ angular.module('myApp.currency-quotes', ['ngRoute', 'myApp.quote', 'myApp.newsle
     if (!$scope.form.$valid)
       return;
 
-    var promise = newsletterService.registerNewsletter($scope.user.nome, $scope.user.email).then(function(data){ 
+    newsletterService.registerNewsletter($scope.user.nome, $scope.user.email).then(function(data){ 
       //var res = newsletterService.getResponse();
         
       console.log("Registro de newsletter efetuado com sucesso.");

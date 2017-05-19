@@ -1,25 +1,30 @@
 <div class="row" >
   <div class="large-6 columns">
-    <h1 class="header header-big">Últimas cotações</h1>
+    <h1 class="header big">Últimas cotações</h1>
     <!-- Futuro Componente -->
+    <div class="loading" ng-show="!listQuotes.length">
+      <div class="cssload-container">
+      <div class="cssload-whirlpool"></div>
+    </div>
+    </div>
     <div class="quote" ng-repeat="quote in listQuotes" ng-model="quote">
       
       <div>
-        <h2 class="header header-med inblock">{{ quote.currencyObj.name.split(' ')[0] }}</h2>
+        <h2 class="header med inblock">{{ quote.currencyObj.name.split(' ')[0] }}</h2>
         <div class="abbreviation inblock">
-          <span class="abbreviation-symbol">[{{quote.currencyObj.abbreviation}}]</span>
-          <img src="{{quote.currencyObj.full_flag_image}}" class="abbreviation-img" />
+          <span class="symbol">[{{quote.currencyObj.abbreviation}}]</span>
+          <img src="{{quote.currencyObj.full_flag_image}}" class="img" />
         </div>
       </div>
 
       <div class="values center inblock">
         <div class="min inblock">
           <span>qtd. mínima:</span><br />
-          <span class="min-value">{{ ctrl.formatInt(quote.quantity) }}</span>
+          <span class="value">{{ ctrl.formatInt(quote.quantity) }}</span>
         </div>
         <div class="separator inblock"></div>
         <div class="unitary inblock">
-          <span class="unitary-number"><span class="unitary-cur">R$</span>{{ ctrl.formatCurrency(quote.total_value / quote.quantity) }}</span>
+          <span class="number"><span class="cur">R$</span>{{ ctrl.formatCurrency(quote.total_value / quote.quantity) }}</span>
         </div>
       </div>
 
@@ -28,17 +33,17 @@
   </div>
   <div class="large-6 columns">
 
-    <h1  class="header header-big">Receba por e-mail</h1>
+    <h1  class="header big">Receba por e-mail</h1>
     <form name="form" class="newsletter" novalidate ng-submit="ctrl.register()">
       <label for="Nome">Seu nome:</label>
-      <input type="text" class="newsletter-input" name="Nome" ng-model="ctrl.user.name" required/>
+      <input type="text" class="input" name="Nome" ng-model="ctrl.user.name" required/>
       <label for="email">E-mail:</label>
-      <input type="text" class="newsletter-input" name="email" ng-model="ctrl.user.email" placeholder="ex: jose@mail.com" required/>
+      <input type="text" class="input" name="email" ng-model="ctrl.user.email" placeholder="ex: jose@mail.com" required/>
 
-      <div class="newsletter-row">
-        <button class="button newsletter-button" type="submit" ng-class="{ 'success': success != undefined }" ng-disabled="success != undefined">{{buttonText}}</button>
+      <div class="row center-text">
+        <button class="button" type="submit" ng-class="{ 'success': success != undefined }" ng-disabled="success != undefined">{{buttonText}}</button>
       </div>
-      <ul ng-if="form.email.$dirty"  class="help-block" ng-messages="form.Email.$error">
+      <ul ng-if="form.email.$dirty" ng-messages="form.Email.$error">
           <li ng-message="required">Campo obrigatório</li>
           <li ng-message="email">Formato inválido</li>
           <li ng-message="success">E-mail cadastrado com sucesso</li>

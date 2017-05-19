@@ -5,7 +5,8 @@ angular.module('myApp', [
   'myApp.quote',
   'myApp.newsletter',
   'myApp.currency-quotes',
-  'ngRoute'
+  'ngRoute',
+  'ngMessages'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');

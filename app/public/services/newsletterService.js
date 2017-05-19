@@ -11,18 +11,15 @@ angular.module('myApp.newsletter', [])
       // $http returns a promise, which has a then function, which also returns a promise
        $http.defaults.headers.common['Authorization'] = 'desafiobeetech';
       $http.post("http://demo3643409.mockable.io/newsletter")
-      .success(function(data, status, headers, config){
+      .then(function(response){
         
-           
-          console.log(data);
+          //console.log(data);
         
-          if(status != 200) {
-            deffered.reject(data);
+          if(response.status != 200) {
+            deffered.reject(response.data);
           }
           
-          deffered.resolve(data);
-      }).error(function(errorResponse){
-          deffered.reject(errorResponse);
+          deffered.resolve(response.data);
       });
       return deffered.promise;
     }

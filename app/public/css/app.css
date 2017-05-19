@@ -14,8 +14,17 @@
   transform: translateX(-50%);
 }
 
+.center-text {
+  text-align: center;
+}
+
 .header {
   font-family: 'Roboto';
+}
+
+.loading {
+  margin-top: 100px;
+  margin-bottom: 200px;
 }
 
 .quote {
@@ -24,13 +33,13 @@
   margin: 15px;
 }
 
-.header.header-big {
+.header.big {
   font-weight: 200;
   font-size: 40px;
   text-align: center;
 }
 
-.header.header-med  {
+.header.med  {
   font-family: 'OpenSans', sans-serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -42,13 +51,13 @@
   top: -5px;
 }
 
-.abbreviation .abbreviation-symbol {
+.abbreviation .symbol {
   display: block;
   font-size: 8px;
   line-height: 8px;
 }
 
-.abbreviation .abbreviation-img {
+.abbreviation .img {
   width: 30px;
 }
 
@@ -61,7 +70,7 @@
   text-align: right;
 }
 
-.values .min-value {
+.values .value {
   font-size: 30px;
   line-height: 20px;
 }
@@ -80,25 +89,24 @@
   font-size: 40px;
 }
 
-.values .unitary-cur {
+.values .unitary .cur {
   font-size: 12px;
   position: relative;
   top: -30px;
   margin-right: 3px;
 }
 
-.values .unitary-number {
-
+.values .unitary .number {
 }
 
-.newsletter .newsletter-input {
-  font-size: 35px;
+.newsletter .input {
+  font-size: 25px;
   height: auto;
   font-weight: 300;
   padding: 20px;
 }
 
-.newsletter .newsletter-button {
+.newsletter .button {
   font-size: 30px;
 }
 
@@ -108,11 +116,11 @@
 
 /*-------------------------------------------------*/
 @media(min-width: 768px) {
-  .header.header-big {
+  .header.big {
     font-size: 60px;
   }
   
-  .header.header-med {
+  .header.med {
      font-size: 45px;
   }
   
@@ -134,7 +142,7 @@
     font-size: 20px;
   }
 
-  .values .min-value {
+  .values .value {
     font-size: 40px;
     line-height: 25px;
   }
@@ -146,16 +154,16 @@
     margin-right:15px;
   }
 
-  .values .unitary-cur {
+  .values .unitary .cur {
     font-size: 15px;
     top: -30px;
     margin-right: 3px;
   }
   
-  .newsletter .newsletter-input {
-    font-size: 60px;
+  .newsletter .input {
+    font-size: 40px;
   }
-  .newsletter .newsletter-button {
+  .newsletter .button {
     font-size: 35px;
   }
   
